@@ -56,12 +56,12 @@ from transformers import BertTokenizer
 my_tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 text_example = df['cleaned_text'].iloc[0]
-tokens = ny_tokenizer.toeknizer(text_example)
+tokens = ny_tokenizer.tokenize(text_example)
 token_ids = my_tokenizer.convert_tokens_to_ids(tokens) 
 
 print(f" Αρχικό κείμενο {text_example}") 
 print(f"\n1. Tokens (Πωσ 'σπάει' τισ λέξεις): {tokens}"}
-print(f"\n2. Tokens IDs (Πωσ βλέπει ο υπολογιστής): {token_ids}")
+print(f"\n2. Tokens IDs (Πως τις βλέπει ο υπολογιστής): {token_ids}")
 
 import torch
 from sklearn.model_selection import train_test_split
